@@ -11,6 +11,14 @@ spring:
       discovery: 
         locator:
           enabled: true
+      routes: 
+        - id: hp-test
+          uri: lb://hp-test
+          order: 8081
+          predicates:
+          - Path=/api/**
+          filters:
+          - StripPrefix=1
 eureka: 
   client:
     service-url: 

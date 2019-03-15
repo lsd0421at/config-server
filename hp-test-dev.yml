@@ -4,7 +4,7 @@ nickName: world !!!
 
 spring:
   application:
-    name:hp-test
+    name: hp-test
 eureka: 
   client:
     service-url: 

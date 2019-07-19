@@ -2,6 +2,9 @@ server:
   port: 8081
 
 nickName: world !!!
+spring:
+  application:
+    name: auth-server
 eureka: 
   client:
     service-url: 

@@ -3,6 +3,20 @@ server:
 
 nickName: world !!!
 
+spring:
+  jpa: 
+    database: MYSQL
+    show-sql: true
+    generate-ddl: true
+#    open-in-view: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update 
+    properties:
+      hibernate.hbm2ddl.auto: none
+      hibernate.show_sql: true
+      hibernate.format_sql: true
+
 eureka: 
   client:
     service-url: 
@@ -14,3 +28,22 @@ eureka:
     prefer-ip-address: true
     appname: ${spring.application.name}
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+druid:
+  url: jdbc:mysql://localhost:3306/test?useSSL=true&useUnicode=true&characterEncoding=UTF-8&socketTimeout=60000
+  username: root 
+  password: 1qaz@WSX
+  driverClassName : com.mysql.jdbc.Driver     
+  initialSize: 5
+  minIdle: 5
+  maxActive: 100
+  maxWait: 60000
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  validationQuery: SELECT 1 FROM DUAL
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  poolPreparedStatements: true
+  maxPoolPreparedStatementPerConnectionSize: 20
+#  filters: stat,wall,log4j
+#  connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000

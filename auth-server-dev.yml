@@ -29,7 +29,7 @@ eureka:
     appname: ${spring.application.name}
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
 druid:
-  url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&socketTimeout=60000
+  url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&socketTimeout=60000&allowPublicKeyRetrieval=true
   username: root 
   password: 1qaz@WSX
   driverClassName : com.mysql.jdbc.Driver     

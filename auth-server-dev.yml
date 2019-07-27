@@ -1,7 +1,9 @@
 server:
   port: 9001
 
-nickName: world !!!
+service:
+  worker-id: 0
+  datacenter-id: 0
 
 spring:
   jpa: 

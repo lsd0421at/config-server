@@ -1,47 +1,27 @@
 server:
-  port: 9001
+  port: 9002
 
-#引用数据库时需配置-用于生成分布式表唯一主键
 service:
-  #工作区
-  worker-id: 0
-  #数据中心
+  worker-id: 1
   datacenter-id: 0
 
-auth:
-  user:
-    token:
-      expire: 1440
-
 spring:
-  redis:
-    datebase: 0
-    host: localhost
-    password: 1qaz@WSX$NldS~
-    port: 6379
-    jedis:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-        max-wait: 1ms
-      timeout: 5000ms
-  jpa: 
+  jpa:
     database: MYSQL
     show-sql: true
     generate-ddl: true
-#    open-in-view: true
+    #    open-in-view: true
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
-      ddl-auto: update 
+      ddl-auto: none
     properties:
       hibernate.hbm2ddl.auto: none
       hibernate.show_sql: true
       hibernate.format_sql: true
 
-eureka: 
+eureka:
   client:
-    service-url: 
+    service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
     home-page-url-path: /
@@ -52,9 +32,9 @@ eureka:
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
 druid:
   url: jdbc:mysql://localhost:3306/helper_app_dev?useSSL=false&useUnicode=true&characterEncoding=UTF-8&socketTimeout=60000&allowPublicKeyRetrieval=true
-  username: root 
+  username: root
   password: 1qaz@WSX
-  driverClassName : com.mysql.jdbc.Driver     
+  driverClassName : com.mysql.jdbc.Driver
   initialSize: 5
   minIdle: 5
   maxActive: 100

@@ -49,3 +49,17 @@ druid:
   maxPoolPreparedStatementPerConnectionSize: 20
 #  filters: stat,wall,log4j
 #  connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+#feign:
+#  hystrix:
+#    enabled: false
+swagger:
+  base-api-package: com.jy.helper.user.controller
+  api:
+    title: USER-SERVER
+    description: 用户服务
+    contact:
+      name: edward
+      url: www.lsd.com
+      email: lsd0421at@126.com
+    version: 1.0.0

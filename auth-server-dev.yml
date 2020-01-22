@@ -69,3 +69,10 @@ druid:
   maxPoolPreparedStatementPerConnectionSize: 20
 #  filters: stat,wall,log4j
 #  connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+feign:
+  # 避免使用HttpUrlConnection
+  okhttp:
+    enabled: true
+#  hystrix:
+#    enabled: false

@@ -76,3 +76,14 @@ feign:
     enabled: true
 #  hystrix:
 #    enabled: false
+
+swagger:
+  base-api-package: com.jy.helper.auth.server.controller
+  api:
+    title: AUTH-SERVER
+    description: 认证服务
+    contact:
+      name: edward
+      url: www.lsd.com
+      email: lsd0421at@126.com
+    version: 1.0.0

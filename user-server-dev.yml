@@ -1,65 +1,6 @@
-server:
-  port: 9002
-
-service:
-  worker-id: 1
-  datacenter-id: 0
-
-spring:
-  jpa:
-    database: MYSQL
-    show-sql: true
-    generate-ddl: true
-    #    open-in-view: true
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    hibernate:
-      ddl-auto: none
-    properties:
-      hibernate.hbm2ddl.auto: none
-      hibernate.show_sql: true
-      hibernate.format_sql: true
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    home-page-url-path: /
-    status-page-url-path: /actuator/info
-    health-check-url-path: /actuator/health
-    prefer-ip-address: true
-    appname: ${spring.application.name}
-    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
 druid:
   url: jdbc:mysql://localhost:3306/helper_app_dev?useSSL=false&useUnicode=true&characterEncoding=UTF-8&socketTimeout=60000&allowPublicKeyRetrieval=true
   username: root
   password: 1qaz@WSX
-  driverClassName : com.mysql.jdbc.Driver
-  initialSize: 5
-  minIdle: 5
-  maxActive: 100
-  maxWait: 60000
-  timeBetweenEvictionRunsMillis: 60000
-  minEvictableIdleTimeMillis: 300000
-  validationQuery: SELECT 1 FROM DUAL
-  testWhileIdle: true
-  testOnBorrow: false
-  testOnReturn: false
-  poolPreparedStatements: true
-  maxPoolPreparedStatementPerConnectionSize: 20
-#  filters: stat,wall,log4j
-#  connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
-#feign:
-#  hystrix:
-#    enabled: false
-swagger:
-  base-api-package: com.jy.helper.user.controller
-  api:
-    title: USER-SERVER
-    description: 用户服务
-    contact:
-      name: edward
-      url: www.lsd.com
-      email: lsd0421at@126.com
-    version: 1.0.0
+
